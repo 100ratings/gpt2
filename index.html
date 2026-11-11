@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="ChatGPT UI Demo">
+  <meta name="description" content="An independent browser-based study of the open-source chatgpt-ios-ui SwiftUI demonstration, with all 40 reference screens in light and dark appearance">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23131313'/%3E%3Cpath d='M16 20h32M16 32h32M16 44h20' stroke='white' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <style id="replica-css">
+:root{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif;font-synthesis:none;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;color-scheme:dark;background:#0c0d10;color:#f8f8f9}
+*{box-sizing:border-box}html,body{margin:0;width:100%;min-height:100%;overscroll-behavior:none}button,input,textarea,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.43;cursor:default}a{color:inherit}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid #6592ff;outline-offset:2px}
+.studio{height:100dvh;min-height:620px;display:grid;grid-template-columns:302px minmax(0,1fr);background:radial-gradient(ellipse at 78% 9%,rgba(42,49,67,.21),transparent 57%),#101114;overflow:hidden}
+.studio-sidebar{z-index:3;display:flex;flex-direction:column;min-height:0;border-right:1px solid #27282d;background:#151619;padding:26px 16px 15px;overflow:hidden}
+.studio-brand{display:flex;align-items:center;gap:12px;margin:0 10px}.studio-brand strong{font-weight:650;font-size:15px;letter-spacing:-.3px}.studio-brand small{display:block;color:#868991;font-size:12px;margin-top:4px}.brand-mark{width:38px;height:38px;border-radius:13px;background:#f5f5f7;color:#141414;display:grid;place-items:center;font-size:24px}
+.studio-source{font-size:11px;color:#a0a3ac;margin:26px 10px 19px;display:flex;gap:8px;align-items:center}.source-dot{width:6px;height:6px;background:#65c99c;border-radius:50%}
+.studio-controls{padding:0 8px 17px;border-bottom:1px solid #2a2b30}.label{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#90939c;margin:14px 0 8px 3px}.segmented{display:flex;gap:3px;background:#24262a;padding:4px;border:1px solid #303136;border-radius:13px}.segmented button{min-width:0;flex:1;border:0;color:#b9bbc1;background:transparent;border-radius:10px;padding:9px 6px;font-size:12px;white-space:nowrap}.segmented button.selected{background:#44464d;color:#fff;box-shadow:0 1px 3px #0003}
+.catalog-head{display:flex;justify-content:space-between;align-items:center;font-size:12px;margin:20px 11px 12px}.catalog-head span{color:#888b96;font-variant-numeric:tabular-nums}.catalog-search{border:1px solid #393a40;border-radius:12px;background:#24252a;color:#9b9ca3;margin:0 8px 14px;display:flex;gap:10px;align-items:center;padding:0 11px;height:38px}.catalog-search input{width:100%;border:0;outline:none;background:transparent;color:#eee;font-size:13px}.catalog-search input::placeholder{color:#878a93}
+.catalog-list{overflow-y:auto;overscroll-behavior:contain;min-height:0;scrollbar-color:#45464c transparent;scrollbar-width:thin;padding:0 7px 20px}.catalog-group{padding-top:13px}.catalog-group-title{padding:0 10px 8px;color:#8c9099;font-size:11px;text-transform:uppercase;letter-spacing:1.1px}.catalog-entry{appearance:none;border:0;width:100%;min-height:38px;text-align:left;color:#bdc0c8;background:none;border-radius:9px;display:flex;align-items:center;gap:10px;padding:8px 11px;font-size:13px}.catalog-entry:hover{background:#292b31}.catalog-entry.active{background:#303e59;color:#dce7ff}.catalog-entry .dot{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.5;flex:none}.catalog-entry.active .dot{background:#72a0ff;opacity:1}.catalog-empty{font-size:13px;line-height:1.5;color:#9ea1aa;padding:18px 9px}
+.studio-bottom{border-top:1px solid #292b30;padding:14px 8px 0;font-size:10px;color:#7d8088}.studio-bottom p{margin:8px 3px}.studio-bottom a{text-decoration:none;color:#adbde8}.nav-buttons{display:flex;gap:5px}.nav-buttons button{background:#26282d;border:1px solid #35373e;border-radius:9px;min-height:32px;color:#d3d4d8;padding:0 11px}.nav-buttons button:last-child{margin-left:auto;font-size:11px}
+.stage{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:0;padding:20px 34px;position:relative}.stage-heading{width:min(100%,580px);display:flex;align-items:end;justify-content:space-between;padding:0 5px 22px}.stage-heading .eyebrow{font-size:11px;letter-spacing:1.6px;color:#888d9c}.stage-heading h1{font-size:21px;margin:5px 0 0;letter-spacing:-.6px}.stage-actions{display:flex;gap:7px}.stage-actions button,.stage-footer button{background:#24262d;border:1px solid #3b3e45;color:#d2d4db;border-radius:11px;padding:9px 12px;font-size:12px;white-space:nowrap}.stage-actions button:hover{background:#353840}
+.device-shell{flex:1;min-height:0;width:100%;display:flex;align-items:center;justify-content:center}.phone{width:min(100%,calc((100dvh - 200px)*402/874),402px);aspect-ratio:402/874;position:relative;flex:none;overflow:hidden;background:#000;border:7px solid #24262a;border-radius:54px;box-shadow:0 0 0 1px #494b4f,0 0 0 3px #070708,0 32px 90px rgba(0,0,0,.55);isolation:isolate;touch-action:pan-y;user-select:none}
+.phone[data-mode="reference"]{background:#000}.reference-image{display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:fill;z-index:5;pointer-events:none;-webkit-user-drag:none}.phone[data-mode="reference"].has-reference .reference-image{display:block}.hotspot-layer{position:absolute;inset:0;z-index:6;display:none;pointer-events:none}.phone[data-mode="reference"].has-reference .hotspot-layer{display:block}.hotspot{position:absolute;border:0;background:transparent;outline:none;opacity:0;pointer-events:auto;touch-action:manipulation;padding:0;-webkit-tap-highlight-color:transparent}.hotspot:focus-visible{opacity:1;background:rgba(60,130,255,.23);border:2px solid #5684fc;border-radius:10px}
+.stage-footer{width:min(100%,580px);display:flex;justify-content:space-between;align-items:center;padding-top:18px;color:#818490;font-size:11px}.stage-footer>div{display:flex;gap:13px;align-items:center}.stage-footer button{display:none}
+.web-view{position:absolute;inset:0;display:flex;flex-direction:column;background:#070707;color:#f6f6f6;--app-bg:#070707;--app-fg:#f4f4f5;--app-secondary:#97979e;--app-surface:#1a1a1d;--app-elevated:#28282b;--app-line:#323235;--app-bubble:#202a3d;--app-user:#e4ebff;--app-accent:#2e67ed;--app-panel:#141416;z-index:2;overflow:hidden}
+html[data-theme="light"] .web-view{background:#fff;color:#121212;--app-bg:#fff;--app-fg:#131313;--app-secondary:#898991;--app-surface:#f4f4f5;--app-elevated:#ebebec;--app-line:#dddde0;--app-bubble:#eaf0ff;--app-user:#245de8;--app-accent:#2e67ed;--app-panel:#f4f4f6}
+.web-view button{color:inherit}.ios-status{height:59px;display:flex;flex:none;justify-content:space-between;align-items:flex-start;padding:17px 28px 0 29px;color:var(--app-fg);font-weight:650;font-size:15px;letter-spacing:.12px;position:relative;z-index:3}.ios-status-right{display:flex;align-items:center;gap:5px}.ios-status svg{display:block}.ios-battery{width:27px;height:13px;background:var(--app-fg);border-radius:4px;color:var(--app-bg);font-size:10px;text-align:center;line-height:13px}
+.web-header{height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;position:relative;z-index:4}.glass-icon{width:42px;height:42px;border-radius:50%;border:1px solid var(--app-line);display:grid;place-items:center;background:color-mix(in srgb,var(--app-elevated) 72%,transparent);backdrop-filter:blur(13px);-webkit-backdrop-filter:blur(13px);box-shadow:inset 0 1px #ffffff15}.glass-icon svg{width:19px;height:19px}.web-title{font-size:17px;font-weight:610;letter-spacing:-.3px;max-width:60%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.center-tabs{display:flex;gap:3px;padding:4px;border:1px solid var(--app-line);background:var(--app-surface);border-radius:22px;font-size:14px}.center-tabs button{border:0;background:transparent;border-radius:17px;min-width:77px;height:37px}.center-tabs button.active{background:var(--app-elevated)}
+.web-main{min-height:0;flex:1;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding:8px 19px 30px}.web-main::-webkit-scrollbar{display:none}.web-main.empty-chat{display:flex;justify-content:center;align-items:center}.welcome{text-align:center;font-size:25px;font-weight:600;letter-spacing:-.7px;transform:translateY(-30px)}.welcome small{display:block;font-size:14px;color:var(--app-secondary);font-weight:400;letter-spacing:0;margin-top:9px}.section-title{font-size:24px;font-weight:670;letter-spacing:-.75px;margin:21px 0}.section-sub{color:var(--app-secondary);font-size:14px;line-height:1.5}.center-state{text-align:center;padding:48px 12px 12px}.center-state .state-icon{margin:0 auto 20px;display:grid;place-items:center;color:var(--app-secondary);width:60px;height:60px}.center-state .state-icon svg{width:43px;height:43px}.center-state h2{font-size:21px;margin:0 0 8px;font-weight:650}.center-state p{color:var(--app-secondary);font-size:16px;line-height:1.45;margin:0 auto 22px;max-width:300px}.action-pill{border:0;background:var(--app-fg);color:var(--app-bg)!important;border-radius:999px;font-size:15px;font-weight:620;padding:12px 20px}
+.composer-area{flex:none;padding:9px 13px 17px;position:relative;z-index:4;background:linear-gradient(transparent,var(--app-bg) 28%)}.composer{border-radius:26px;border:1px solid var(--app-line);background:var(--app-surface);box-shadow:inset 0 1px #ffffff08;display:flex;align-items:center;padding:6px 8px;gap:9px;min-height:52px}.composer textarea{font-size:15px;line-height:1.4;display:block;color:var(--app-fg);background:none;border:0;outline:none;min-width:0;flex:1;resize:none;max-height:100px;height:29px;overflow-y:auto;padding:5px 0;user-select:text}.composer textarea::placeholder{color:var(--app-secondary)}.compose-round{border:0;background:transparent;color:var(--app-fg);display:grid;place-items:center;width:33px;height:34px;flex:none}.compose-round svg{width:25px;height:25px}.compose-round.blue{width:33px;height:33px;border-radius:50%;background:var(--app-accent);color:white}.compose-round.blue svg{width:18px;height:18px}.compose-round.small svg{width:21px;height:21px}.home-line{height:4px;width:109px;background:var(--app-fg);border-radius:4px;margin:2px auto 0;opacity:.8}
+.message{font-size:15px;line-height:1.55;margin:20px 0}.message.user{background:var(--app-bubble);color:var(--app-user);border-radius:23px 23px 8px 23px;max-width:88%;margin-left:auto;padding:12px 15px}.message.assistant{max-width:100%;padding:0 3px}.message.assistant p{margin:0 0 10px}.message-actions{display:flex;gap:9px;margin-top:12px;color:var(--app-secondary)}.message-actions button{width:27px;height:27px;display:grid;place-items:center;border:0;background:none;color:inherit}.message-actions svg{width:16px;height:16px}
+.web-drawer{position:absolute;inset:0;z-index:7;background:var(--app-bg);padding:4px 21px 28px;overflow:auto}.web-drawer-header{display:flex;align-items:center;justify-content:space-between;font-size:25px;font-weight:690;margin:23px 0 19px}.web-drawer-header .glass-icon{width:39px;height:39px}.drawer-row{display:flex;align-items:center;gap:15px;font-size:16px;padding:12px 3px;text-align:left;width:100%;border:0;background:none;min-height:47px}.drawer-row svg{width:24px;height:24px}.drawer-divider{height:1px;background:var(--app-line);margin:17px 0}.drawer-label{font-size:16px;font-weight:630;margin:28px 0 10px}.drawer-chat{display:block;text-align:left;border:0;background:none;padding:12px 0;width:100%;font-size:15px}.drawer-footer{position:sticky;bottom:0;display:flex;justify-content:space-between;margin-top:30px;padding:14px 0;background:var(--app-bg)}.profile-bubble{background:#6b5eaf;color:white;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-size:14px}
+.web-group{background:var(--app-surface);border-radius:17px;overflow:hidden;margin-bottom:15px}.setting-row{border:0;background:transparent;width:100%;display:flex;align-items:center;gap:12px;min-height:54px;padding:0 15px;text-align:left;border-bottom:1px solid var(--app-line);font-size:15px}.setting-row:last-child{border-bottom:0}.setting-row svg{width:21px;height:21px;color:var(--app-secondary)}.setting-row .row-value{font-size:12px;color:var(--app-secondary);margin-left:auto;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.setting-row .chevron{margin-left:auto;color:var(--app-secondary)}.setting-label{font-size:13px;color:var(--app-secondary);margin:23px 5px 8px}.settings-account{text-align:center;margin:13px 0 22px}.settings-account .profile-bubble{width:72px;height:72px;font-size:25px;margin:0 auto 9px;background:#2e9a9c}.settings-account strong{font-size:17px}
+.feature-card{background:var(--app-surface);border:1px solid var(--app-line);border-radius:20px;padding:16px;margin:10px 0;display:flex;flex-direction:column;gap:9px}.feature-card h3{margin:0;font-size:17px}.feature-card p{margin:0;color:var(--app-secondary);font-size:13px;line-height:1.45}.feature-card button{align-self:flex-start;border:0;color:var(--app-fg);font-weight:590;background:var(--app-elevated);padding:8px 12px;border-radius:11px}.metric{display:flex;gap:10px;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid var(--app-line)}.metric:last-child{border:0}.metric small{color:var(--app-secondary);display:block;margin-top:5px}.metric strong{font-size:20px}.big-number{font-size:40px;font-weight:680;letter-spacing:-1.6px;margin:16px 0 6px}.tabs-bar{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:3px 0 12px}.tabs-bar button{flex:none;border:0;background:var(--app-surface);padding:10px 13px;border-radius:18px;font-size:14px}.tabs-bar button.active{background:var(--app-elevated)}.card-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.art-card{position:relative;min-height:160px;border-radius:20px;overflow:hidden;display:flex;align-items:end;padding:12px;color:white;background:linear-gradient(150deg,#9e6b8c,#57598c 70%,#283344)}.art-card:nth-child(4n+2){background:linear-gradient(150deg,#497ba9,#2d3f5f 70%,#16192f)}.art-card:nth-child(4n+3){background:linear-gradient(135deg,#e1ae58,#9a4961 70%,#473452)}.art-card:nth-child(4n+4){background:linear-gradient(135deg,#53947e,#30454f 65%,#16292e)}.art-card strong{position:relative;z-index:1;font-size:14px}.art-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.markdown{font-size:15px;line-height:1.6}.markdown h2{font-size:20px;margin:14px 0}.markdown ul{padding-left:21px}.markdown p{margin:11px 0}.markdown pre{overflow:auto;border:1px solid var(--app-line);background:var(--app-surface);border-radius:15px;padding:14px;color:var(--app-fg);font-size:12px}.markdown code{background:var(--app-surface);border-radius:4px;padding:2px 4px}.markdown table{width:100%;border-collapse:collapse;font-size:13px}.markdown th,.markdown td{border:1px solid var(--app-line);padding:9px;text-align:left}.markdown th{background:var(--app-surface)}
+.web-sheet{position:absolute;z-index:8;inset:auto 0 0;max-height:77%;overflow-y:auto;background:var(--app-panel);border-radius:32px 32px 0 0;padding:12px 19px 28px;border-top:1px solid var(--app-line);box-shadow:0 -16px 40px #0004}.web-sheet .grabber{height:5px;width:38px;border-radius:5px;background:var(--app-secondary);opacity:.4;margin:0 auto 20px}.web-sheet h2{font-size:20px;margin:6px 0 16px}.sheet-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.sheet-grid button{background:var(--app-elevated);border:0;border-radius:17px;display:flex;flex-direction:column;align-items:center;gap:9px;padding:21px 6px;font-size:12px}.sheet-grid svg{width:27px;height:27px}
+.voice-page{position:absolute;inset:0;background:var(--app-bg);display:flex;align-items:center;justify-content:space-between;flex-direction:column;padding:69px 19px 38px}.voice-orb{width:210px;height:210px;border-radius:50%;background:radial-gradient(circle at 30% 22%,#c1fffd,#64c6d5 35%,#3971a8 75%,#9f8ecf);box-shadow:0 0 65px #69a6d550, inset 0 0 23px #ffffffa0;filter:saturate(1.15)}.voice-controls{display:flex;gap:18px;align-items:center}.voice-controls .glass-icon{width:52px;height:52px}.voice-header{width:100%;display:flex;justify-content:space-between}.voice-sub{font-size:17px;color:var(--app-secondary);text-align:center}.voice-choose-row{display:flex;align-items:center;gap:13px;justify-content:center}.voice-chip{padding:12px 18px;background:var(--app-surface);border-radius:15px;font-weight:650}
+.web-banner{border-radius:18px;border:1px solid var(--app-line);background:var(--app-surface);padding:13px 16px;margin:13px 0;color:var(--app-secondary);line-height:1.4;font-size:13px}.work-step{display:flex;gap:12px;margin:17px 0}.step-badge{background:var(--app-elevated);border-radius:50%;width:27px;height:27px;display:grid;place-items:center;flex:none}.work-step h3{font-size:15px;margin:2px 0 6px}.work-step p{font-size:13px;line-height:1.5;color:var(--app-secondary);margin:0}.dot-bubble{border-radius:19px;background:var(--app-surface);padding:12px 14px;font-size:15px;margin:10px 0;max-width:87%;line-height:1.5}.dot-bubble.me{margin-left:auto;background:var(--app-bubble)}
+.catalog-modal[hidden],.toast[hidden]{display:none!important}.catalog-modal{position:absolute;inset:0;z-index:20}.modal-backdrop{position:absolute;inset:0;background:#0009;backdrop-filter:blur(9px)}.mobile-sheet{position:absolute;left:0;right:0;bottom:0;max-height:87%;display:flex;flex-direction:column;background:#18191d;border-radius:29px 29px 0 0;color:#f6f6f7;box-shadow:0 -20px 50px #0005;padding:8px 17px 21px}.sheet-grabber{width:40px;height:5px;border-radius:9px;background:#51535c;margin:0 auto 14px}.sheet-header{display:flex;justify-content:space-between;align-items:center;margin:0 5px 12px;font-size:19px}.sheet-header button{width:32px;height:32px;border-radius:50%;background:#35363c;border:0;color:#fff;font-size:22px}.sheet-actions{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:11px}.sheet-actions button{border:1px solid #3b3d43;border-radius:999px;background:#25262b;color:#fff;padding:8px 12px;font-size:11px}.sheet-actions button.selected{background:#414857;border-color:#778cb6}.mobile-search{width:100%;height:42px;border:1px solid #3b3e45;border-radius:13px;background:#25262b;color:white;padding:0 13px;font-size:14px;outline:none;margin-bottom:5px}.mobile-catalog{overflow-y:auto;min-height:0;overscroll-behavior:contain}.mobile-catalog .catalog-entry{color:#e7e7eb}.mobile-catalog .catalog-group-title{color:#999eaa}.sheet-note{color:#9498a1;font-size:10px;line-height:1.4;margin:9px 4px 0}.toast{position:absolute;bottom:78px;left:12%;right:12%;z-index:30;background:#34373df2;color:white;border-radius:16px;text-align:center;padding:13px 16px;font-size:13px;box-shadow:0 6px 28px #0005}
+@media(max-height:760px) and (min-width:741px){.studio{min-height:0}.phone{width:min(100%,calc((100dvh - 130px)*402/874),402px)}.stage-heading{padding-bottom:8px}.stage-footer{padding-top:10px}}
+@media(max-width:740px){body{overflow:hidden}.studio{display:block;height:100dvh;min-height:0}.studio-sidebar,.stage-heading,.stage-footer{display:none}.stage{width:100%;height:100dvh;padding:0;display:block;background:#000}.device-shell{height:100%;display:block}.phone{width:100vw;height:100dvh;aspect-ratio:auto;border:0;box-shadow:none;border-radius:0}.web-view{padding-top:env(safe-area-inset-top,0px)}.ios-status{height:59px;padding-top:13px}.web-view{padding-bottom:env(safe-area-inset-bottom,0px)}.catalog-modal .mobile-sheet{padding-bottom:calc(16px + env(safe-area-inset-bottom,0px))}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+</style>
+  
+  <title>ChatGPT iOS UI · Web Study</title>
+</head>
+<body>
+  <div id="studio" class="studio">
+    <aside class="studio-sidebar" aria-label="Screen catalog">
+      <div class="studio-brand"><span class="brand-mark">⌘</span><div><strong>ChatGPT iOS UI</strong><small>Web reference study</small></div></div>
+      <div class="studio-source"><span class="source-dot"></span><span>40 screens · 80 reference captures</span></div>
+      <div class="studio-controls">
+        <div class="label">Appearance</div>
+        <div class="segmented" role="group" aria-label="Appearance"><button id="theme-dark" type="button" data-theme-select="dark" class="selected">Dark</button><button id="theme-light" type="button" data-theme-select="light">Light</button></div>
+        <div class="label">Presentation</div>
+        <div class="segmented" role="group" aria-label="Display mode"><button type="button" data-mode-select="reference" class="selected">Original reference</button><button type="button" data-mode-select="web">Interactive web</button></div>
+      </div>
+      <div class="catalog-head"><strong>Screen catalog</strong><span id="screen-counter">01 / 40</span></div>
+      <label class="catalog-search"><svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><input id="catalog-search" placeholder="Search screens" aria-label="Search screens" spellcheck="false" autocomplete="off"></label>
+      <nav id="catalog-list" class="catalog-list" aria-label="Screens"></nav>
+      <div class="studio-bottom"><div class="nav-buttons"><button id="previous-screen" aria-label="Previous screen">←</button><button id="next-screen" aria-label="Next screen">→</button><button id="copy-screen-link">Copy link</button></div><p>Source: <a href="https://github.com/bryanrg22/chatgpt-ios-ui" rel="noopener" target="_blank">bryanrg22/chatgpt-ios-ui</a></p><p>Independent demo · no connection to OpenAI</p></div>
+    </aside>
+    <main class="stage" aria-label="iPhone user interface preview">
+      <div class="stage-heading"><div><span class="eyebrow">LIVE PREVIEW</span><h1 id="stage-title">Chat home</h1></div><div class="stage-actions"><button id="view-switch" title="Change view" aria-label="Change view">Web view</button><button id="stage-open-catalog" title="Browse screens" aria-label="Browse all screens">All screens</button></div></div>
+      <div class="device-shell">
+        <div id="phone" class="phone" aria-label="Interactive iPhone screen">
+          <div id="web-view" class="web-view" aria-live="polite"></div>
+          <img id="reference-img" class="reference-image" alt="" draggable="false" decoding="async">
+          <div id="hotspot-layer" class="hotspot-layer" aria-label="Tap areas"></div>
+          <div id="catalog-modal" class="catalog-modal" hidden>
+            <div class="modal-backdrop" data-close-catalog="true"></div>
+            <div class="mobile-sheet"><div class="sheet-grabber"></div><div class="sheet-header"><strong>Explore all screens</strong><button id="close-catalog" type="button" aria-label="Close screen catalog">×</button></div><div class="sheet-actions"><button data-theme-select="dark">Dark</button><button data-theme-select="light">Light</button><button data-mode-select="reference">Reference</button><button data-mode-select="web">Web</button></div><input id="mobile-search" class="mobile-search" type="search" placeholder="Search 40 screens" aria-label="Search all screens"><div id="mobile-catalog" class="mobile-catalog"></div><p class="sheet-note">Tip: press and hold an empty part of the screen to reopen this catalog</p></div>
+          </div>
+          <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+        </div>
+      </div>
+      <div class="stage-footer"><span id="stage-details">1:1 reference frame · iPhone 17 Pro simulator</span><div><button id="mobile-control" type="button">Explore 40 screens</button><span>‹ Previous / Next ›</span></div></div>
+    </main>
+  </div>
+<script id="replica-js">
+/*
+ * ChatGPT iOS UI, independent web visual study
+ * Original SwiftUI demo and screenshot references:
+ * https://github.com/bryanrg22/chatgpt-ios-ui (MIT, Bryan Ramirez-Gonzalez)
+ * This browser project is not affiliated with OpenAI
+ */
+(()=>{
+'use strict';
+const GROUPS = [
+ ['Chat',[
+  ['chatHome','Chat home'],['chatTyped','Typed message'],['chatLongDraft','Long draft'],
+  ['chatConversation','Conversation'],['chatTemporary','Temporary chat'],['chatDictation','Dictation']]],
+ ['Sidebar & discovery',[
+  ['drawer','Sidebar'],['drawerExplore','Explore menu'],['sites','Sites'],['projects','Projects'],
+  ['plugins','Plugins'],['scheduled','Scheduled']]],
+ ['Media',[
+  ['attachmentMenu','Attachments'],['camera','Camera'],['photoPicker','Photo picker'],['mediaViewer','Media viewer']]],
+ ['Rich text',[
+  ['markdown','Markdown'],['markdownInlineCode','Inline code'],['markdownTableCode','Tables and code']]],
+ ['Work',[
+  ['workHome','Work home'],['workTask','Work task']]],
+ ['Voice',[
+  ['voiceChooser','Voice chooser'],['voiceClassic','Classic voice']]],
+ ['Settings & personalization',[
+  ['settings','Settings'],['settingsGeneral','General'],['settingsAbout','About'],
+  ['customize','Customize ChatGPT'],['personality','Personality'],['memory','Memory']]],
+ ['Feature workspaces',[
+  ['health','Health'],['healthEmpty','Empty Health'],['finances','Finances'],
+  ['financesEmpty','Empty Finances'],['images','Images'],['space','Space'],['codex','Codex']]],
+ ['Your dot',[
+  ['dot','Your dot'],['dotConnected','Connected call'],['dotCallSummary','Call summary'],['dotFailedCall','Failed call']]]
+];
+const SCREENS=GROUPS.flatMap(([group,items])=>items.map(([id,label])=>({group,id,label})));
+const IDS=new Set(SCREENS.map(x=>x.id));
+const BY_ID=Object.fromEntries(SCREENS.map(x=>[x.id,x]));
+const SOURCE='https://raw.githubusercontent.com/bryanrg22/chatgpt-ios-ui/main/Examples/ChatGPTUIDemo/SnapshotTests/__Snapshots__/ScreenSnapshotTests/';
+const els={
+ studio:document.getElementById('studio'),phone:document.getElementById('phone'),web:document.getElementById('web-view'),
+ image:document.getElementById('reference-img'),hotspots:document.getElementById('hotspot-layer'),
+ catalog:document.getElementById('catalog-list'),mobileCatalog:document.getElementById('mobile-catalog'),
+ search:document.getElementById('catalog-search'),mobileSearch:document.getElementById('mobile-search'),
+ modal:document.getElementById('catalog-modal'),title:document.getElementById('stage-title'),
+ counter:document.getElementById('screen-counter'),details:document.getElementById('stage-details'),
+ viewSwitch:document.getElementById('view-switch'),toast:document.getElementById('toast')
+};
+let storedTheme='dark',storedMode='reference';
+try{storedTheme=localStorage.getItem('gpt2-theme')||'dark';storedMode=localStorage.getItem('gpt2-mode')||'reference'}catch{}
+const params=new URLSearchParams(location.search);
+const state={
+ screen:IDS.has(params.get('screen'))?params.get('screen'):'chatHome',
+ theme:params.get('theme')==='light'||params.get('theme')==='dark'?params.get('theme'):(storedTheme==='light'?'light':'dark'),
+ mode:params.get('mode')==='web'||params.get('mode')==='reference'?params.get('mode'):(storedMode==='web'?'web':'reference'),
+ draft:'',messages:[],themePickerOpen:false,webSheet:null,selectedTab:'Templates',selectedItem:'Poster',
+ selectedVoice:'Breeze',demoNotice:'',drawerExpanded:false,backStack:[],catalogOpen:false
+};
+const ICONS={
+ menu:'<path d="M4 7h16M4 13h10"/>',close:'<path d="M5 5l14 14M19 5 5 19"/>',
+ arrowLeft:'<path d="m14 5-7 7 7 7M7 12h13"/>',arrowRight:'<path d="M5 12h14m-7-7 7 7-7 7"/>',
+ plus:'<path d="M12 4v16M4 12h16"/>',search:'<circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/>',
+ check:'<path d="m4 12 5 5L20 6"/>',chevron:'<path d="m9 5 7 7-7 7"/>',chevDown:'<path d="m5 9 7 7 7-7"/>',
+ book:'<path d="M12 5c-3-2-7-2-9-1v15c2-1 6-1 9 1m0-15c3-2 7-2 9-1v15c-2-1-6-1-9 1M12 5v15"/>',
+ folder:'<path d="M3 7a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v9H3z"/>',
+ plugin:'<path d="M10 3h4v4a2 2 0 1 0 4 0h3v7h-3a2 2 0 1 0 0 4h3v3h-7v-3a2 2 0 1 0-4 0v3H3v-7h3a2 2 0 1 0 0-4H3V3h7z"/>',
+ clock:'<circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/>',explore:'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="m17 14 4 4-4 4-4-4z"/>',
+ code:'<path d="m8 7-5 5 5 5m8-10 5 5-5 5M14 4l-4 16"/>',photo:'<rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="2"/><path d="m3 17 6-5 4 3 4-5 4 6"/>',
+ mic:'<rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4m-4 0h8"/>',
+ audio:'<path d="M3 10v4m4-8v12m5-16v20m5-15v10m4-7v4"/>',send:'<path d="M12 20V4m-7 7 7-7 7 7"/>',
+ photoLibrary:'<rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/>',
+ settings:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M4.9 4.9l2.1 2.1m10 10 2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/>',
+ heart:'<path d="M20 8c0 5-8 11-8 11S4 13 4 8a4 4 0 0 1 8-1 4 4 0 0 1 8 1z"/>',
+ activity:'<path d="m3 12 4-4 4 8 4-10 3 6h3"/>',wallet:'<rect x="3" y="5" width="18" height="15" rx="3"/><path d="M15 11h6v5h-6a2.5 2.5 0 0 1 0-5z"/>',
+ camera:'<path d="M3 7h5l2-3h4l2 3h5v13H3z"/><circle cx="12" cy="13" r="4"/>',
+ share:'<rect x="4" y="9" width="16" height="12" rx="2"/><path d="M12 14V2m-4 4 4-4 4 4"/>',
+ copy:'<rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h3"/>',
+ globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c4 4 4 14 0 18M12 3c-4 4-4 14 0 18"/>',
+ sparkle:'<path d="m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5z"/>',
+ user:'<circle cx="12" cy="8" r="4"/><path d="M4 21c1-8 15-8 16 0"/>',
+ notebook:'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 3v18m3-13h6m-6 4h6"/>',
+ grid:'<rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/>',
+ checkCircle:'<circle cx="12" cy="12" r="9"/><path d="m7 12 3 3 6-6"/>',
+ video:'<rect x="3" y="5" width="18" height="14" rx="3"/><path d="m10 9 5 3-5 3z"/>',
+ stop:'<rect x="5" y="5" width="14" height="14" rx="3"/>',
+ ellipsis:'<circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/>',
+ phone:'<path d="M7 3h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM10 18h4"/>',
+ call:'<path d="M5 3c-1 0-2 2-2 4 1 7 7 13 14 14 2 0 4-1 4-2l-4-4-3 3c-3-1-6-4-7-7l3-3z"/>',
+ document:'<path d="M6 2h9l4 4v16H6zM15 2v5h4M9 12h7M9 16h7"/>',
+ pencil:'<path d="m3 17-.5 4.5L7 21 20 8l-4-4L3 17zM14 6l4 4"/>'
+};
+const esc=text=>String(text??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+const icon=(name,extra='')=>`<svg aria-hidden="true" ${extra} viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">${ICONS[name]||ICONS.sparkle}</svg>`;
+const btn=(content,action,classes='glass-icon',aria='')=>`<button type="button" class="${classes}" data-action="${action}" aria-label="${esc(aria||action)}">${content}</button>`;
+const go=(id,label,classes='')=>`<button type="button" class="${classes}" data-go="${id}">${label}</button>`;
+const refUrl=(id,theme)=>`${SOURCE}screen.${id}-${theme}.png`;
+const screenIndex=()=>SCREENS.findIndex(x=>x.id===state.screen);
+function linkFor(id=state.screen){const u=new URL(location.href);u.searchParams.set('screen',id);u.searchParams.set('theme',state.theme);u.searchParams.set('mode',state.mode);return u.toString();}
+function syncURL(push){const u=new URL(linkFor());const old=location.pathname+location.search;const next=u.pathname+u.search;if(old!==next){history[push?'pushState':'replaceState']({screen:state.screen},'',next);}}
+function saved(){try{localStorage.setItem('gpt2-theme',state.theme);localStorage.setItem('gpt2-mode',state.mode)}catch{}}
+function toast(message){els.toast.textContent=message;els.toast.hidden=false;clearTimeout(toast.timer);toast.timer=setTimeout(()=>{els.toast.hidden=true},2600);}
+function setScreen(id,push=true){if(!IDS.has(id))return;const changed=state.screen!==id;if(changed){state.backStack.push(state.screen);state.screen=id;state.webSheet=null;state.demoNotice='';}closeCatalog(false);syncURL(push);render();}
+function back(){if(state.webSheet){state.webSheet=null;renderWeb();return;}if(state.screen==='drawerExplore'){setScreen('drawer');return;}const x=state.backStack.pop()||'chatHome';setScreen(x);}
+function setTheme(theme){if(theme!=='dark'&&theme!=='light')return;state.theme=theme;saved();syncURL(false);render();}
+function setMode(mode){if(mode!=='reference'&&mode!=='web')return;state.mode=mode;saved();syncURL(false);render();}
+function step(delta){const i=(screenIndex()+delta+SCREENS.length)%SCREENS.length;setScreen(SCREENS[i].id);}
+function renderCatalogEntries(search=''){
+ const q=search.trim().toLowerCase();let count=0;
+ const markup=GROUPS.map(([group,items])=>{
+  const rows=items.filter(([id,label])=>(label+' '+id+' '+group).toLowerCase().includes(q));
+  if(!rows.length)return '';
+  count+=rows.length;
+  return `<section class="catalog-group"><div class="catalog-group-title">${esc(group)}</div>${rows.map(([id,label])=>`<button type="button" data-go="${id}" class="catalog-entry ${state.screen===id?'active':''}" aria-current="${state.screen===id?'page':'false'}"><span class="dot"></span>${esc(label)}</button>`).join('')}</section>`;
+ }).join('');
+ return count?markup:'<p class="catalog-empty">No screens match this search</p>';
+}
+function renderCatalog(){els.catalog.innerHTML=renderCatalogEntries(els.search.value);els.mobileCatalog.innerHTML=renderCatalogEntries(els.mobileSearch.value);}
+function openCatalog(){state.catalogOpen=true;els.modal.hidden=false;els.mobileSearch.value='';renderCatalog();}
+function closeCatalog(update=true){state.catalogOpen=false;els.modal.hidden=true;if(update)render();}
+function addHotspot(x,y,w,h,to,label){const b=document.createElement('button');b.type='button';b.className='hotspot';b.style.cssText=`left:${x}%;top:${y}%;width:${w}%;height:${h}%;`;b.setAttribute('aria-label',label||BY_ID[to]?.label||'Open');b.dataset.go=to;els.hotspots.appendChild(b);}
+function hotspotsFor(screen){
+ els.hotspots.textContent='';
+ const hotspot=(x,y,w,h,id,label)=>addHotspot(x,y,w,h,id,label);
+ const backable=new Set(['settingsGeneral','settingsAbout','customize','personality','memory','plugins','mediaViewer','camera','photoPicker','voiceClassic','workTask','dotConnected','dotCallSummary','dotFailedCall']);
+ if(screen==='drawer'||screen==='drawerExplore'){
+  hotspot(76,5,20,12,'chatHome','Close sidebar');hotspot(2,7,22,10,'chatHome','Close sidebar');
+  hotspot(8,17,78,6,'space','Library');hotspot(8,23,78,6,'projects','Projects');
+  hotspot(8,29,78,6,'plugins','Plugins');hotspot(8,35,78,6,'scheduled','Scheduled');
+  hotspot(8,41,78,6,'codex','Codex');hotspot(8,46,78,9,'drawerExplore','Explore more');
+  hotspot(7,79,60,9,'settings','Settings');
+  return;
+ }
+ if(screen==='attachmentMenu'){
+  hotspot(2,4,20,11,'chatHome','Close');hotspot(5,45,29,17,'camera','Open camera');
+  hotspot(35,45,29,17,'photoPicker','Open photos');hotspot(67,45,28,17,'mediaViewer','Open viewer');
+  hotspot(0,0,100,35,'chatHome','Dismiss attachments');return;
+ }
+ if(backable.has(screen))hotspot(2,5,22,11,screen==='workTask'?'workHome':screen==='voiceClassic'?'voiceChooser':screen==='mediaViewer'?'chatConversation':screen==='settingsAbout'?'settings':'settings','Back');
+ else if(screen==='settings')hotspot(76,5,22,12,'chatHome','Close settings');
+ else if(!['voiceChooser','voiceClassic','dotConnected','dotFailedCall'].includes(screen))hotspot(2,6,22,12,'drawer','Open sidebar');
+ if(screen==='chatHome'||screen==='chatTemporary'){
+  hotspot(75,6,23,11,screen==='chatHome'?'chatTemporary':'chatHome','Toggle temporary chat');
+  hotspot(14,84,61,10,'chatTyped','Start typing');hotspot(75,85,21,10,'voiceChooser','Voice');
+  hotspot(0,85,17,12,'attachmentMenu','Open attachments');
+ }else if(screen==='chatTyped'||screen==='chatLongDraft'){
+  hotspot(73,81,25,17,'chatConversation','Send message');hotspot(1,80,22,17,'attachmentMenu','Attachments');
+ }else if(screen==='chatConversation'||screen.startsWith('markdown')){
+  hotspot(75,83,25,14,'voiceChooser','Voice');hotspot(0,82,23,15,'attachmentMenu','Attachments');
+  hotspot(18,84,56,12,'chatTyped','New prompt');hotspot(83,6,15,10,'chatHome','New chat');
+ }else if(screen==='chatDictation'){hotspot(75,84,23,13,'chatConversation','Finish dictation');}
+ else if(screen==='workHome'){hotspot(15,84,69,11,'workTask','Start Work task');hotspot(34,7,35,10,'chatHome','Switch to Chat');}
+ else if(screen==='workTask'){hotspot(25,80,50,13,'workHome','Close task');}
+ else if(screen==='settings'){
+  hotspot(5,25,90,8,'personality','Personalization');hotspot(5,33,90,8,'memory','Memory');hotspot(5,41,90,8,'plugins','Plugins');
+  hotspot(5,64,90,8,'settingsGeneral','General');hotspot(5,80,90,8,'settingsAbout','About');
+ }else if(screen==='settingsGeneral'){hotspot(7,20,85,15,'customize','Customize');hotspot(7,43,85,12,'settingsAbout','About');}
+ else if(screen==='customize'){hotspot(10,27,80,13,'personality','Personality');hotspot(10,43,80,12,'memory','Memory');}
+ else if(screen==='images'){hotspot(8,25,40,22,'mediaViewer','Open image');hotspot(51,25,41,22,'workTask','Use template');}
+ else if(screen==='space'){hotspot(7,28,45,34,'mediaViewer','Open Space image');}
+ else if(screen==='projects'){hotspot(70,6,27,12,'workHome','Create project');}
+ else if(screen==='sites'){hotspot(29,42,45,15,'workHome','Create site');}
+ else if(screen==='voiceChooser'){hotspot(29,75,43,18,'voiceClassic','Start voice');hotspot(0,5,24,12,'chatHome','Close voice');}
+ else if(screen==='voiceClassic'){hotspot(33,82,35,16,'chatHome','Close voice');}
+ else if(screen==='dot'){hotspot(65,7,29,10,'dotConnected','Call Your dot');hotspot(8,75,60,13,'dotCallSummary','Call history');}
+ else if(screen==='dotConnected'){hotspot(25,81,48,15,'dotCallSummary','End call');}
+ else if(screen==='dotFailedCall'){hotspot(20,74,58,17,'dot','Try again');}
+ else if(screen==='finances'){hotspot(5,42,89,25,'financesEmpty','More finance states');}
+ else if(screen==='health'){hotspot(5,42,89,25,'healthEmpty','Empty Health state');}
+ else if(screen==='codex'){hotspot(19,60,65,16,'workTask','Start a task');}
+}
+function renderReference(){
+ els.phone.classList.remove('has-reference');
+ const url=refUrl(state.screen,state.theme);
+ els.image.onload=()=>{if(els.image.src===url)els.phone.classList.add('has-reference');};
+ els.image.onerror=()=>{els.phone.classList.remove('has-reference');toast('Reference image unavailable; interactive view is still usable');};
+ els.image.alt=`Original ${BY_ID[state.screen].label} screenshot, ${state.theme} appearance`;
+ els.image.src=url;
+ hotspotsFor(state.screen);
+}
+function setWebSheet(id){state.webSheet=id;renderWeb();}
+function iosStatus(){return `<div class="ios-status"><span>9:41</span><span class="ios-status-right"><svg viewBox="0 0 20 16" width="19" height="15" fill="currentColor"><path d="M1 12h3v4H1zM6 9h3v7H6zM11 5h3v11h-3zM16 1h3v15h-3z"/></svg><svg viewBox="0 0 24 18" width="18" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M2 6Q12-2 22 6M6 10Q12 5 18 10M10 14Q12 12 14 14"/></svg><span class="ios-battery">93</span></span></div>`;}
+function header(){
+ const id=state.screen;
+ if(id==='chatHome'||id==='chatTyped'||id==='chatConversation'||id==='chatTemporary'||id==='chatLongDraft'||id==='chatDictation'||id.startsWith('markdown')||id.startsWith('work')){
+  const work=id.startsWith('work');
+  return `<header class="web-header">${btn(icon('menu'),'open-drawer','glass-icon','Open sidebar')}<div class="center-tabs">${go('chatHome','Chat',work?'':'active')}${go('workHome','Work',work?'active':'')}</div>${btn(icon(id==='chatTemporary'?'checkCircle':'clock'),id==='chatTemporary'?'new-chat':'toggle-temp','glass-icon','Temporary chat')}</header>`;
+ }
+ if(id==='drawer'||id==='drawerExplore')return '';
+ const destinationBack=id==='settings'?'chatHome':id==='settingsGeneral'||id==='settingsAbout'||id==='personality'||id==='memory'?'settings':id==='voiceClassic'?'voiceChooser':id==='workTask'?'workHome':'chatHome';
+ const isMain=['images','sites','projects','codex','space','health','healthEmpty','finances','financesEmpty','dot','plugins','scheduled','customize'].includes(id);
+ return `<header class="web-header">${isMain?btn(icon('menu'),'open-drawer','glass-icon','Open sidebar'):go(destinationBack,icon('arrowLeft'),'glass-icon')}<div class="web-title">${esc(BY_ID[id].label)}</div>${['sites','projects'].includes(id)?btn(icon('plus'),'create','glass-icon','Create'):id==='settings'?go('chatHome',icon('close'),'glass-icon'):btn(icon('ellipsis'),'open-catalog','glass-icon','More screens')}</header>`;
+}
+function composer(){
+ const v=state.screen,isWork=v.startsWith('work');
+ if(!['chatHome','chatTyped','chatLongDraft','chatConversation','chatTemporary','chatDictation','markdown','markdownInlineCode','markdownTableCode','workHome','workTask','images'].includes(v))return '';
+ return `<div class="composer-area"><div class="composer">${btn(icon('plus'),'attachments','compose-round','Add attachment')}<textarea id="composer-input" aria-label="Ask ChatGPT" rows="1" placeholder="${isWork?'Describe a task':'Ask anything'}">${esc(state.draft|| (v==='chatTyped'?'Write a short greeting.':v==='chatLongDraft'?'This is a long draft to measure the composer.\n'.repeat(7):''))}</textarea>${btn(icon('mic'),'dictate','compose-round small','Dictate')}${btn(icon(state.draft?'send':'audio'),state.draft?'send':'voice','compose-round blue','Send or voice')}</div><div class="home-line" aria-hidden="true"></div></div>`;
+}
+function message(text,isUser=false){return `<div class="message ${isUser?'user':'assistant'}"><p>${esc(text)}</p>${!isUser?`<div class="message-actions">${btn(icon('copy'),'copy','', 'Copy')}${btn(icon('audio'),'speak','', 'Read aloud')}${btn(icon('check'),'vote','', 'Good response')}${btn(icon('ellipsis'),'message-more','', 'More')}</div>`:''}</div>`;}
+function drawer(){
+ const items=[['book','Library','space'],['folder','Projects','projects'],['plugin','Plugins','plugins'],['clock','Scheduled','scheduled'],['code','Codex','codex'],['explore','Explore','drawerExplore']];
+ return `<div class="web-drawer">${iosStatus()}<div class="web-drawer-header"><span>ChatGPT</span><div style="display:flex;gap:9px">${btn(icon('search'),'search','glass-icon','Search')}${go('chatHome',icon('close'),'glass-icon')}</div></div>${items.map(([i,label,to])=>`<button class="drawer-row" data-go="${to}">${icon(i)}<span>${label}</span></button>`).join('')}${state.screen==='drawerExplore'?`<div class="web-group">${[['Sites','sites'],['Images','images'],['Health','health'],['Finances','finances'],['Your dot','dot']].map(([x,id])=>`<button class="setting-row" data-go="${id}">${esc(x)}<span class="chevron">›</span></button>`).join('')}</div>`:''}<div class="drawer-label">Pinned</div>${go('chatConversation','Example conversation','drawer-chat')}${go('markdown','Formatting examples','drawer-chat')}<div class="drawer-divider"></div>${[['Recent conversation','chatConversation'],['Try Work','workHome'],['Your dot','dot'],['Settings','settings']].map(([label,id])=>go(id,esc(label),'drawer-chat')).join('')}<div class="drawer-footer"><div class="profile-bubble">AM</div>${go('chatHome','New chat','action-pill')}</div></div>`;
+}
+function settingsRows(items){return `<div class="web-group">${items.map(([ico,title,to,detail])=>`<button class="setting-row" data-${to&&IDS.has(to)?'go':'action'}="${to||'notice'}">${icon(ico)}<span>${esc(title)}</span>${detail?`<span class="row-value">${esc(detail)}</span>`:'<span class="row-value">›</span>'}</button>`).join('')}</div>`;}
+function settingsView(id){
+ if(id==='settings')return `<div class="settings-account"><div class="profile-bubble">AM</div><strong>Alex Morgan</strong></div><div class="setting-label">Customize ChatGPT</div>${settingsRows([['user','Personalization','personality'],['book','Memory','memory'],['plugin','Plugins','plugins']])}<div class="setting-label">Account</div>${settingsRows([['user','Email',null,'alex@example.com'],['phone','Phone number',null,'Not added'],['sparkle','Subscription',null,'Pro']])}<div class="setting-label">Theme</div>${settingsRows([['settings','Appearance','appearance',state.theme==='dark'?'Dark':'Light'],['sparkle','Accent color',null,'Blue']])}<div class="setting-label">App settings</div>${settingsRows([['settings','General','settingsGeneral'],['clock','Notifications',null],['audio','Voice',null],['document','About','settingsAbout']])}`;
+ if(id==='settingsAbout')return `<div class="center-state"><div class="state-icon">${icon('sparkle')}</div><h2>ChatGPT for iOS</h2><p>Version 1.2026.267</p></div>${settingsRows([['document','Version',null,'1.2026.267'],['code','Build',null,'36747771815'],['globe','Terms of use',null],['globe','Privacy policy',null],['document','Open-source UI study',null]])}`;
+ if(id==='settingsGeneral')return `<div class="setting-label">General</div>${settingsRows([['globe','App language',null,'English'],['audio','Speech',null],['settings','Haptic feedback',null,'On'],['settings','Appearance','appearance',state.theme==='dark'?'Dark':'Light'],['book','Data controls',null]])}<div class="setting-label">About</div>${settingsRows([['document','About ChatGPT','settingsAbout']])}`;
+ if(id==='personality')return `<div class="section-title">Customize ChatGPT</div><p class="section-sub">How should ChatGPT respond to you?</p>${['Default','Professional','Friendly','Candid','Quirky','Efficient'].map((name,i)=>`<div class="setting-row"><span>${name}</span><span class="row-value">${i===0?'✓':''}</span></div>`).join('')}`;
+ if(id==='memory')return `<div class="section-title">Memory</div><p class="section-sub">Manage what ChatGPT remembers about your conversations</p>${settingsRows([['book','Reference saved memories','notice','On'],['clock','Reference chat history','notice','On'],['settings','Manage memories',null]])}<div class="web-banner">This is a presentation-only demo with fictional data</div>`;
+ if(id==='customize')return `<div class="section-title">Customize ChatGPT</div><p class="section-sub">Tailor your experience</p>${settingsRows([['user','Personality','personality'],['book','Memory','memory'],['plugin','Plugins','plugins'],['settings','Instructions',null]])}`;
+ return '';
+}
+function emptyState(title,desc,cta,action='create',symbol='grid'){return `<div class="center-state"><div class="state-icon">${icon(symbol)}</div><h2>${title}</h2><p>${desc}</p>${cta?`<button class="action-pill" data-action="${action}">${cta}</button>`:''}</div>`;}
+function artworks(){const images=['Poster','Aerial','Illustration','Flashback','Caricature','Interior','Tin'];const titles=['Create a poster','Dreamy landscapes','Editorial illustration','Retro photo','Character art','Interior design','Product photography'];return images.map((name,i)=>`<button class="art-card" data-action="image-detail" data-item="${name}"><img loading="lazy" src="https://raw.githubusercontent.com/bryanrg22/chatgpt-ios-ui/main/Examples/ChatGPTUIDemo/Demo/GalleryAssets.xcassets/gallery-${name.toLowerCase()}.imageset/${name.toLowerCase()}.png" onerror="this.remove()" alt=""><strong>${titles[i]}</strong></button>`).join('');}
+function markdownView(id){
+ if(id==='markdownInlineCode')return `<div class="markdown"><h2>Inline code and formatting</h2><p>This is an example of <code>inline code</code> inside a paragraph, with <strong>bold text</strong>, <em>emphasis</em> and an ordinary <a href="#">link</a></p><p>Use the <code>print()</code> function to display a message</p></div>`;
+ if(id==='markdownTableCode')return `<div class="markdown"><h2>Table and code examples</h2><table><tr><th>Feature</th><th>State</th></tr><tr><td>Markdown</td><td>Supported</td></tr><tr><td>Code blocks</td><td>Supported</td></tr><tr><td>Tables</td><td>Supported</td></tr></table><h2>Code</h2><pre><code>let greeting = "Hello, world!";\nconsole.log(greeting);</code></pre></div>`;
+ return `<div class="markdown"><h2>A short guide to a wonderful day</h2><p>Here are a few ways to make your day more meaningful</p><ul><li>Take a moment for yourself</li><li>Make something creative</li><li>Reach out to someone you love</li></ul><h2>Getting started</h2><p>Small actions can have a surprisingly large impact</p><pre><code>const today = 'a great day';\nconsole.log(today);</code></pre><p>Try a new idea and see where it takes you</p></div>`;
+}
+function mainContent(){const id=state.screen;
+ if(id==='drawer'||id==='drawerExplore')return drawer();
+ if(id==='chatHome')return '<div class="welcome">What can I help with?<small>Ask anything, or try Work</small></div>';
+ if(id==='chatTemporary')return '<div class="welcome">Temporary Chat<small>For a chat that won’t appear in history</small></div>';
+ if(id==='chatTyped'||id==='chatLongDraft')return '<div class="welcome"><small>Ask anything</small></div>';
+ if(id==='chatDictation')return `<div class="center-state"><div class="state-icon">${icon('mic')}</div><h2>Listening…</h2><p>Dictation is a host-provided action in the original demo</p>${btn('Done','send','action-pill')}</div>`;
+ if(id==='chatConversation')return `${message('Reply with a short greeting.',true)}${message('Hey! 👋 How’s it going?')}${state.messages.map(m=>message(m.text,m.user)).join('')}`;
+ if(id.startsWith('markdown'))return markdownView(id);
+ if(id==='workHome')return `<h1 class="section-title">What can I work on?</h1><p class="section-sub">Let ChatGPT carry out multi-step tasks</p>${[['Research a topic','Work through articles, data and sources'],['Create a document','Put your ideas into a polished deliverable'],['Plan a project','Break a complex goal into steps']].map(([title,detail])=>`<div class="feature-card"><h3>${title}</h3><p>${detail}</p>${go('workTask','Try it')}</div>`).join('')}`;
+ if(id==='workTask')return `<h1 class="section-title">Design a poster for a neighborhood garden event</h1><div class="web-banner">ChatGPT Work · Demo task</div>${[['1','Planning','Gathering requirements and exploring a direction'],['2','Researching','Reviewing possible themes, colors and typography'],['3','Creating','Preparing a sample result for review']].map(([n,a,b])=>`<div class="work-step"><span class="step-badge">${n}</span><div><h3>${a}</h3><p>${b}</p></div></div>`).join('')}<button class="action-pill" data-action="notice">View activity</button>`;
+ if(id==='settings'||['settingsGeneral','settingsAbout','customize','personality','memory'].includes(id))return settingsView(id);
+ if(id==='sites')return emptyState('No sites yet','Create a site with ChatGPT and it will appear here','Create site','create','grid');
+ if(id==='projects')return `${emptyState('Bring everything together','Keep conversations, files and instructions in one place','New project','create','folder')}`;
+ if(id==='plugins')return `<h1 class="section-title">Plugins</h1><p class="section-sub">Connect tools and extend your conversations</p>${[['Browse plugins','Discover experiences from connected services'],['Your plugins','Access the tools you have connected']].map(([a,b])=>`<div class="feature-card"><h3>${a}</h3><p>${b}</p>${btn('Explore','notice')}</div>`).join('')}`;
+ if(id==='scheduled')return emptyState('Scheduled tasks','Keep track of tasks and reminders in one place','Create a task','notice','clock');
+ if(id==='images')return `<h1 class="section-title">Images</h1><div class="web-banner">Your generated images moved to Library</div><div class="tabs-bar">${['Templates','Trending'].map(x=>`<button data-action="tab" data-tab="${x}" class="${state.selectedTab===x?'active':''}">${x}</button>`).join('')}</div><div class="card-grid">${artworks()}</div>`;
+ if(id==='space')return `<h1 class="section-title">Library</h1><div class="tabs-bar">${['Suggested','Favorites','Folders','Pages','Images','Files'].map(x=>`<button data-action="tab" data-tab="${x}" class="${state.selectedTab===x?'active':''}">${x}</button>`).join('')}</div><div class="card-grid">${artworks()}</div>`;
+ if(id==='codex')return `<h1 class="section-title">Codex</h1><p class="section-sub">Write, review and ship code with a coding agent</p><div class="feature-card"><h3>Make progress on your projects</h3><p>Create a task or connect a repository to get started</p>${go('workTask','Start a task')}</div>${settingsRows([['code','Connect GitHub',null],['clock','Recent tasks',null]])}`;
+ if(id==='healthEmpty')return emptyState('Your health, understood','Connect a provider to get started','Connect health data','notice','heart');
+ if(id==='health')return `<h1 class="section-title">Health</h1><p class="section-sub">A snapshot of your health information · Sample data</p><div class="web-group">${[['LDL cholesterol','88','mg/dL'],['Active calories','420','cal'],['Resting heart rate','64','bpm']].map(([a,b,c])=>`<div class="metric" style="padding:16px"><div><strong>${b}</strong><small>${c}</small></div><span>${a}</span></div>`).join('')}</div>${go('healthEmpty','Manage connections','action-pill')}`;
+ if(id==='financesEmpty')return emptyState('Get a clearer picture','Connect accounts to see finances in one place','Connect accounts','notice','wallet');
+ if(id==='finances')return `<h1 class="section-title">Finances</h1><p class="section-sub">October · Sample information</p><div class="big-number">$1,420</div><p class="section-sub">Total spending this month</p><div class="feature-card"><h3>Spending by category</h3>${[['Housing','$1,100'],['Entertainment','$80'],['Shopping','$80'],['Dining','$80']].map(([a,b])=>`<div class="metric"><span>${a}</span><strong style="font-size:15px">${b}</strong></div>`).join('')}</div>${go('financesEmpty','Manage accounts','action-pill')}`;
+ if(id==='dot'||id.startsWith('dot'))return `<h1 class="section-title">Your dot</h1><div class="web-banner">A proactive personal agent that can help over time</div><div class="dot-bubble">Hi, Alex! Is there anything you'd like me to take care of?</div><div class="dot-bubble me">Can you help with my plans today?</div><div class="dot-bubble">Absolutely! I'll start with what matters most</div><div class="feature-card"><h3>${id==='dotFailedCall'?'Call failed':id==='dotConnected'?'Call connected':id==='dotCallSummary'?'Call summary':'Voice and computer'}</h3><p>${id==='dotCallSummary'?'7 minutes, 23 seconds':id==='dotConnected'?'Connected · 00:38':'Try a demonstration call, or explore its states'}</p>${go(id==='dotConnected'?'dotCallSummary':id==='dot'?'dotConnected':'dot',id==='dotConnected'?'End call':id==='dot'?'Call dot':'Back to dot')}</div>`;
+ if(id==='attachmentMenu')return '<div class="welcome">Attachments</div>';
+ if(id==='camera')return emptyState('Camera preview','This demo does not access the camera','Attach photo','photoPicker','camera');
+ if(id==='photoPicker')return `<h1 class="section-title">Photos</h1><div class="card-grid">${artworks()}</div>`;
+ if(id==='mediaViewer')return `<div class="center-state"><div class="state-icon">${icon('photo')}</div><h2>Media viewer</h2><p>Zoom and fullscreen controls are implemented by the host app</p></div>`;
+ return emptyState(BY_ID[id].label,'Explore this screen in the exact reference capture','View reference','reference','sparkle');
+}
+function webSheet(){if(!state.webSheet)return '';
+ if(state.webSheet==='attachmentMenu')return `<div class="web-sheet"><div class="grabber"></div><h2>Add to chat</h2><div class="sheet-grid">${[['camera','Camera','camera'],['photo','Photos','photoPicker'],['document','Files','mediaViewer']].map(([ico,label,id])=>go(id,icon(ico)+`<span>${label}</span>`,'')).join('')}</div><p class="section-sub" style="margin-top:18px">This is a design-only demonstration</p>${btn('Cancel','dismiss-sheet','action-pill')}</div>`;
+ if(state.webSheet==='imageDetail')return `<div class="web-sheet"><div class="grabber"></div><h2>${esc(state.selectedItem)}</h2><div class="art-card" style="height:180px;margin-bottom:18px"><strong>${esc(state.selectedItem)}</strong></div><p class="section-sub">Use this template to create something unique</p>${btn('Try it','try-image','action-pill')}${btn('Cancel','dismiss-sheet','action-pill')}</div>`;
+ if(state.webSheet==='appearance')return `<div class="web-sheet"><div class="grabber"></div><h2>Appearance</h2>${[['dark','Dark'],['light','Light']].map(([key,label])=>`<button class="setting-row" data-theme-select="${key}"><span>${label}</span>${state.theme===key?'✓':''}</button>`).join('')}${btn('Done','dismiss-sheet','action-pill')}</div>`;
+ if(state.webSheet==='create')return `<div class="web-sheet"><div class="grabber"></div><h2>Create</h2><p class="section-sub">Enter a name for your sample project or site</p><input id="new-item-title" style="border-radius:13px;background:var(--app-elevated);color:var(--app-fg);padding:13px;border:0;width:100%;margin:16px 0" placeholder="Project name"/>${btn('Create','create-done','action-pill')} ${btn('Cancel','dismiss-sheet','action-pill')}</div>`;
+ return '';
+}
+function voicePage(){return `<div class="voice-page"><div class="voice-header">${btn(icon('close'),'close-voice','glass-icon','Close voice')}${btn(icon('ellipsis'),'voice-settings','glass-icon','Voice settings')}</div><div style="display:grid;place-items:center;gap:24px"><div class="voice-orb"></div><div class="voice-sub">${state.screen==='voiceChooser'?'Choose a voice':'Listening...'}</div>${state.screen==='voiceChooser'?`<div class="voice-choose-row">${btn(icon('arrowLeft'),'voice-previous','glass-icon','Previous voice')}<div class="voice-chip">${esc(state.selectedVoice)}</div>${btn(icon('arrowRight'),'voice-next','glass-icon','Next voice')}</div>`:''}</div><div class="voice-controls">${btn(icon('mic'),'notice','glass-icon','Mute')}${btn(icon('camera'),'camera','glass-icon','Camera')}${btn(icon('close'),state.screen==='voiceChooser'?'voice-start':'close-voice','glass-icon',state.screen==='voiceChooser'?'Start voice':'End voice')}</div></div>`;}
+function renderWeb(){
+ if(state.mode!=='web'&&els.phone.classList.contains('has-reference'))return;
+ const id=state.screen;
+ const content=id==='drawer'||id==='drawerExplore'?drawer():id==='voiceChooser'||id==='voiceClassic'?voicePage():`${iosStatus()}${header()}<main class="web-main ${id==='chatHome'||id==='chatTemporary'?'empty-chat':''}">${state.demoNotice?`<div class="web-banner">${esc(state.demoNotice)}</div>`:''}${mainContent()}</main>${composer()}${webSheet()}`;
+ els.web.innerHTML=content;
+ if(id==='chatTyped'&&!state.draft)state.draft='Write a short greeting.';
+}
+function render(){
+ if(!BY_ID[state.screen])state.screen='chatHome';
+ document.documentElement.dataset.theme=state.theme;
+ els.phone.dataset.mode=state.mode;
+ els.phone.classList.remove('has-reference');
+ els.title.textContent=BY_ID[state.screen].label;
+ els.counter.textContent=String(screenIndex()+1).padStart(2,'0')+' / '+SCREENS.length;
+ els.details.textContent=(state.mode==='reference'?'Original SwiftUI snapshot':'Interactive browser approximation')+' · '+state.theme+' · '+BY_ID[state.screen].label;
+ els.viewSwitch.textContent=state.mode==='reference'?'Interactive web':'Original reference';
+ document.querySelectorAll('[data-theme-select]').forEach(b=>b.classList.toggle('selected',b.dataset.themeSelect===state.theme));
+ document.querySelectorAll('[data-mode-select]').forEach(b=>b.classList.toggle('selected',b.dataset.modeSelect===state.mode));
+ renderCatalog();
+ renderWeb();
+ if(state.mode==='reference')renderReference();else {els.image.removeAttribute('src');els.hotspots.textContent='';}
+}
+function send(){const input=document.getElementById('composer-input');if(input)state.draft=input.value;const val=state.draft.trim();if(!val){setScreen('voiceChooser');return;}state.messages.push({user:true,text:val});state.messages.push({user:false,text:'This is a local UI demonstration. Responses are sample text supplied by the web study, not an AI model.'});state.draft='';setScreen(state.screen.startsWith('work')?'workTask':'chatConversation');}
+function onAction(action,clicked){
+ switch(action){
+ case 'open-drawer':setScreen('drawer');break;
+ case 'close-drawer':case 'new-chat':state.draft='';state.messages=[];setScreen('chatHome');break;
+ case 'open-catalog':openCatalog();break;
+ case 'close-catalog':closeCatalog();break;
+ case 'toggle-temp':setScreen(state.screen==='chatTemporary'?'chatHome':'chatTemporary');break;
+ case 'attachments':setWebSheet('attachmentMenu');break;
+ case 'dismiss-sheet':state.webSheet=null;renderWeb();break;
+ case 'send':send();break;
+ case 'voice':case 'voice-start':setScreen(action==='voice-start'?'voiceClassic':'voiceChooser');break;
+ case 'voice-previous':case 'voice-next':{const voices=['Breeze','Cove','Ember','Juniper','Maple','Sol','Spruce','Vale'];state.selectedVoice=voices[(voices.indexOf(state.selectedVoice)+(action==='voice-previous'?-1:1)+voices.length)%voices.length];renderWeb();break;}
+ case 'voice-settings':toast('Voice settings are part of the native demo');break;
+ case 'close-voice':setScreen('chatHome');break;
+ case 'camera':setScreen('camera');break;
+ case 'photoPicker':setScreen('photoPicker');break;
+ case 'dictate':setScreen('chatDictation');break;
+ case 'copy':{const msg=document.querySelector('.message.assistant p')?.textContent||'Sample answer';navigator.clipboard?.writeText(msg).then(()=>toast('Copied')).catch(()=>toast('Copy unavailable'));break;}
+ case 'copy-link':navigator.clipboard?.writeText(linkFor()).then(()=>toast('Screen link copied')).catch(()=>toast('Copy unavailable'));break;
+ case 'speak':toast('Audio requires an app integration');break;
+ case 'vote':toast('Thanks for your feedback');break;
+ case 'message-more':toast('Message options');break;
+ case 'create':setWebSheet('create');break;
+ case 'create-done':state.webSheet=null;state.demoNotice='Created in this local demonstration';renderWeb();break;
+ case 'tab':state.selectedTab=clicked.dataset.tab||'Templates';renderWeb();break;
+ case 'image-detail':state.selectedItem=clicked.dataset.item||'Poster';setWebSheet('imageDetail');break;
+ case 'try-image':state.webSheet=null;setScreen('workTask');break;
+ case 'appearance':setWebSheet('appearance');break;
+ case 'reference':setMode('reference');break;
+ case 'notice':toast('This action requires the original app host');break;
+ case 'search':openCatalog();break;
+ default:toast('Design-only demonstration');
+ }
+}
+document.addEventListener('click',e=>{
+ const close=e.target.closest('[data-close-catalog]');if(close){closeCatalog();return;}
+ const theme=e.target.closest('[data-theme-select]');if(theme){setTheme(theme.dataset.themeSelect);return;}
+ const mode=e.target.closest('[data-mode-select]');if(mode){setMode(mode.dataset.modeSelect);return;}
+ const goEl=e.target.closest('[data-go]');if(goEl){setScreen(goEl.dataset.go);return;}
+ const action=e.target.closest('[data-action]');if(action){onAction(action.dataset.action,action);return;}
+});
+document.addEventListener('input',e=>{
+ if(e.target.id==='catalog-search')els.catalog.innerHTML=renderCatalogEntries(e.target.value);
+ if(e.target.id==='mobile-search')els.mobileCatalog.innerHTML=renderCatalogEntries(e.target.value);
+ if(e.target.id==='composer-input'){state.draft=e.target.value;const button=e.target.closest('.composer')?.querySelector('[data-action="voice"], [data-action="send"]');if(button){button.dataset.action=state.draft?'send':'voice';button.innerHTML=icon(state.draft?'send':'audio');}}
+});
+document.getElementById('previous-screen').addEventListener('click',()=>step(-1));
+document.getElementById('next-screen').addEventListener('click',()=>step(1));
+document.getElementById('copy-screen-link').addEventListener('click',()=>onAction('copy-link'));
+document.getElementById('view-switch').addEventListener('click',()=>setMode(state.mode==='reference'?'web':'reference'));
+document.getElementById('stage-open-catalog').addEventListener('click',openCatalog);
+document.getElementById('mobile-control').addEventListener('click',openCatalog);
+document.getElementById('close-catalog').addEventListener('click',closeCatalog);
+window.addEventListener('popstate',()=>{const p=new URLSearchParams(location.search);state.screen=IDS.has(p.get('screen'))?p.get('screen'):'chatHome';if(['dark','light'].includes(p.get('theme')))state.theme=p.get('theme');if(['web','reference'].includes(p.get('mode')))state.mode=p.get('mode');render();});
+document.addEventListener('keydown',e=>{
+ if(e.key==='Escape'){if(state.catalogOpen)closeCatalog();else if(state.webSheet){state.webSheet=null;renderWeb();}else back();return;}
+ if(e.target.closest('input,textarea,[contenteditable]'))return;
+ if(e.key==='g'||e.key==='G')openCatalog();
+ if(e.key==='l'||e.key==='L')setTheme(state.theme==='dark'?'light':'dark');
+ if(e.key==='r'||e.key==='R')setMode(state.mode==='reference'?'web':'reference');
+ if(e.key==='ArrowRight')step(1);
+ if(e.key==='ArrowLeft')step(-1);
+});
+// A long touch opens the full catalog without drawing controls over the snapshot.
+let press=null,pressTimer=null;
+els.phone.addEventListener('pointerdown',e=>{
+ if(state.catalogOpen||e.target.closest('input,textarea,button')||!e.isPrimary)return;
+ press={x:e.clientX,y:e.clientY,id:e.pointerId};
+ clearTimeout(pressTimer);pressTimer=setTimeout(()=>{if(!press)return;press=null;openCatalog();},720);
+},{passive:true});
+els.phone.addEventListener('pointermove',e=>{
+ if(press&&Math.hypot(e.clientX-press.x,e.clientY-press.y)>16){press=null;clearTimeout(pressTimer);}
+},{passive:true});
+for(const event of ['pointerup','pointercancel','pointerleave'])els.phone.addEventListener(event,()=>{press=null;clearTimeout(pressTimer)},{passive:true});
+els.phone.addEventListener('contextmenu',e=>{if(state.mode==='reference'){e.preventDefault();openCatalog();}});
+// Two-finger tap is another way to access all 40 source screenshots on a phone.
+els.phone.addEventListener('touchstart',e=>{if(e.touches.length>=2&&!state.catalogOpen){e.preventDefault();openCatalog();}},{passive:false});
+render();syncURL(false);
+})();
+
+</script>
+</body>
+</html>
